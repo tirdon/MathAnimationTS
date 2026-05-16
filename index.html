@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MathAnimationTS</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main id="app">
+      <section class="mat-title">
+        <h1>MathAnimationTS</h1>
+        <p>Manim-style scene composition rendered into a real <code>&lt;canvas id="scene"&gt;</code> with WebGPU.</p>
+      </section>
+
+      <canvas id="scene" class="mat-canvas" width="1280" height="720"></canvas>
+      <div id="controls"></div>
+
+      <section class="mat-source-panel" aria-labelledby="source-heading">
+        <h2 id="source-heading">Source</h2>
+        <pre><code id="source"></code></pre>
+      </section>
+    </main>
+
+    <script id="scene-source" type="text/plain">
+import animation, { Circle, Create, Scene, Square } from './dist/index.js';
+
+const scene = new Scene('#scene');
+
+scene.add(new Circle());
+scene.play(Create(new Square().shift((1).I.plus((2).J))));
+
+animation(scene, { controls: '#controls' });
+    </script>
+    <script type="module" src="/dist/main.js"></script>
+  </body>
+</html>
