@@ -1,0 +1,29 @@
+{
+  "name": "math-animation-ts",
+  "version": "0.1.0",
+  "description": "A Manim-inspired math animation framework for TypeScript and WebGPU with timeline playback controls.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": "./dist/index.js",
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "npm run build && python3 -m http.server 4173",
+    "test": "npm run build && node test/run-tests.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "math",
+    "animation",
+    "typescript",
+    "webgpu",
+    "manim"
+  ],
+  "license": "Unlicense"
+}
